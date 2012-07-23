@@ -112,3 +112,7 @@
 [submodule "vim/bundle/Align"]
 	path = vim/bundle/Align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "vim/bundle/vim-matchit"]
+	path = vim/bundle/vim-matchit
+	url = https://github.com/Spaceghost/vim-matchit.git
+
