@@ -54,6 +54,8 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjbach/lusty'
+Bundle 'mileszs/ack.vim'
+Bundle 'gregsexton/gitv'
 
 " Config base
 
@@ -99,6 +101,9 @@ let g:indent_guides_guide_size  = 1
 autocmd! VimEnter * hi IndentGuidesOdd ctermbg=236 guibg=#303030 | hi IndentGuidesEven ctermbg=239 guibg=#505050
 autocmd BufRead * IndentGuidesEnable
 "autocmd! VimEnter,Colorscheme * hi IndentGuidesEven ctermbg=123 guibg=#880055
+
+" configure ack.vim plugin
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 syntax on
 filetype plugin on
