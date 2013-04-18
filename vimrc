@@ -37,6 +37,7 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
 
 Bundle 'godlygeek/csapprox'
 Bundle 'sjl/gundo.vim'
