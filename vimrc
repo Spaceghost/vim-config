@@ -34,6 +34,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
+"Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-rails'
@@ -58,6 +59,9 @@ Bundle 'sjbach/lusty'
 Bundle 'mileszs/ack.vim'
 Bundle 'gregsexton/gitv'
 Bundle 'godlygeek/tabular'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'airblade/vim-gitgutter'
 
 " Config base
 
@@ -111,7 +115,7 @@ syntax on
 filetype plugin on
 filetype indent on
 set number " Show line numbers
-set paste  " Make pasting work
+set nopaste
 
 " Enable syntax folding for blocks and comments.
 set foldmethod=syntax
