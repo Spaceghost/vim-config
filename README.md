@@ -8,12 +8,6 @@ git clone git://github.com/Spaceghost/vim-config
 
 cd vim-config && make install
 
-## Compile an extension  
-### Note: Use the same ruby you compiled your vim with.  
-cd vim/bundle/command-t/ruby/command-t  
-ruby extconf.rb  
-make
-
 vim +BundleInstall
 
 

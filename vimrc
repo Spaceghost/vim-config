@@ -17,8 +17,6 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 map <leader>menu :NERDTreeToggle<CR>
 
-Bundle 'wincent/command-t'
-
 " gitv requires vim-fugitive
 " Includes advice below.
 Bundle 'tpope/vim-fugitive'
