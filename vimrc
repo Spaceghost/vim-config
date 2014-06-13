@@ -47,6 +47,7 @@ let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_user_mouse = 1
 let g:vimwiki_folding = 1
 let g:vimwiki_fold_lists = 1
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_list_ignore_newline = 0
 let wiki_1 = {}
 let wiki_1.nested_syntaxes = {'python': 'python', 'ruby': 'ruby', 'rails': 'rails', 'yaml': 'yml'}
@@ -154,10 +155,6 @@ let wiki_1.nested_syntaxes = {'python': 'python', 'ruby': 'ruby', 'rails': 'rail
 " Bundle 'sjbach/lusty'
 " Bundle 'mileszs/ack.vim'
 " Bundle 'godlygeek/tabular'
-
-" vimwiki setup
-" let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
 
 " " vim-flog setup
 "  Bundle 'sentientmonkey/vim-flog'
