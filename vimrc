@@ -50,6 +50,241 @@ let g:vimwiki_list_ignore_newline = 0
 let wiki_1 = {}
 let wiki_1.nested_syntaxes = {'python': 'python', 'ruby': 'ruby', 'rails': 'rails', 'yaml': 'yml'}
 
+" Disable balloon popup since theres a plugin that makes it really annoying
+if has("balloon_eval")
+  set noballooneval
+  set balloondelay=100000
+end
+
+" General configuration
+filetype indent on
+filetype on
+set number " Show line numbers
+set relativenumber " Show line numbers relative to current line "
+set nopaste
+
+" Enable syntax folding for blocks and comments.
+set foldmethod=syntax
+set foldminlines=3
+set foldlevel=100
+
+" Convert tabs to spaces, use 2 spaces in place of tabs.
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+" indentation configuration
+set cindent
+set smartindent
+set autoindent
+
+" " text search options
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+"
+" " hide buffers instead of closing them when you :q, keeping their undo history
+set hidden
+"
+" Open new windows on the bottom and right instead of the top and left.
+set splitbelow
+set splitright
+
+" increase the default command line history
+set history=1000
+
+" File name tab completion functions like bash, it gives you a list of
+" options instead of automatically filling in the first possible match.
+set wildmenu
+" It will however, with this option, complete up to the first character of
+" ambiguity.
+set wildmode=list:longest
+" improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
+"
+" scrolls the buffer before you reach the last line of the window
+set scrolloff=3
+
+" Always show status line
+set laststatus=2
+
+" default encoding
+set encoding=utf-8
+
+" sets backspace key functions, allows it to backspace over end of line
+" characters, start of line, and indentation
+set backspace=indent,eol,start
+
+" enable mouse in console
+set mousemodel=extend
+set mouse=a
+set mousehide
+
+" set the spellcheck language
+setlocal spell spelllang=en_us
+" disable spellcheck by default
+set nospell
+
+
+" " movement keys will take you to the next or previous line
+" set whichwrap+=<,>,h,l
+
+
+" " Make clipbord work on OS X. This makes copy/paste operations trivial between
+" " vim and other applications since they all use the same clipboard now.
+" set clipboard=unnamed
+" " visual select automatically copies to X11's selection ("middle click") buffer
+" set go+=a
+""
+" " for exuberant CTags support
+" set tags=./tags;/
+"
+" " use a user-local vim-specific directory for backups rather than the global
+" " tmp directory by default
+" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"
+" " treat question marks as part of a word in ruby
+" autocmd BufRead *.rb,*.rake,*.rhtml,<ruby> set isk=?,@,48-57,_,192-255
+"
+" " ruby
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"
+" " disable wordwrap when looking at CSVs
+" autocmd BufRead *.csv,*.csv*,<csv> set nowrap
+"
+" " remove whistespace at end of line before write
+" func! StripTrailingWhitespace()
+"   normal mZ
+"   %s/\s\+$//e
+"   normal `Z
+" endfunc
+" au BufWrite * if ! &bin | call StripTrailingWhitespace() | endif
+"
+" " display the file name of the current file in the Terminal (xterm/item/&c) title
+" if has('title')
+"   set title
+"   autocmd BufEnter * let &titlestring = "vim: " . expand("%:p:~")
+"   "set titlestring=%t%(\ [%R%M]%)
+"   "autocmd BufEnter * exe "echo '\033'+bufname("%")+'\007'"
+" endif
+"
+
+" " shortcuts
+" " for rails.vim alternate between test and tested
+" map <leader>t  :A<CR>
+" map <leader>ts :AS<CR>
+" map <leader>tv :AV<CR>
+" " for rails.vim swap to model/control/etc from associated file
+" map <leader>rm :Rmodel<CR>
+" map <leader>rc :Rcontroller<CR>
+" map <leader>rh :Rhelper<CR>
+" map <leader>ru :Runittest<CR>
+" map <leader>rf :Rfunctionaltest<CR>
+" map <leader>ro :Robserver<CR>
+" map <leader>rv :Rview<CR>
+" map <leader>rl :Rlocale<CR>
+" " for CtrlP
+" map <leader>ff :CtrlP<CR>
+" map <leader>fb :CtrlPBuffer<CR>
+" map <leader>ft :CtrlPTag<CR>
+" map <leader>fq :CtrlPQuickFix<CR>
+" map <leader>fd :CtrlPDir<CR>
+" map <leader>fr :CtrlPRTS<CR>
+" map <leader>fm :CtrlPMRU<CR>
+" " for gundo
+" map <leader>g :GundoToggle<CR>
+" " runs diff against the current buffer and the file on disk
+" map <leader>d :w !diff % -<CR>
+" " When pressing <leader>cd switch to the directory of the open buffer
+" map <leader>cd :cd %:p:h<CR>
+" " search hilighting control, enables and disable intelligently and toggles
+" nnoremap / :set hlsearch<CR>/
+" nnoremap ? :set hlsearch<CR>?
+" nnoremap n :set hlsearch<CR>n
+" nnoremap N :set hlsearch<CR>N
+" nnoremap <CR> :noh<CR><CR>
+" nnoremap <leader>/ :set hlsearch!<CR>
+"
+" " tab navigation like firefox
+" nmap <C-S-tab> :tabprevious<CR>
+" nmap <C-tab> :tabnext<CR>
+" map <C-S-tab> :tabprevious<CR>
+" map <C-tab> :tabnext<CR>
+" imap <C-S-tab> <ESC>:tabprevious<CR>i
+" imap <C-tab> <ESC>:tabnext<CR>i
+" nmap <C-t> :tabnew<CR>
+" imap <C-t> <ESC>:tabnew<CR>
+"
+" " Bash like keys for the command line
+" cnoremap <C-A> <Home>
+" cnoremap <C-E> <End>
+" cnoremap <C-K> <C-U>
+"
+" cnoremap <C-P> <Up>
+" cnoremap <C-N> <Down>
+"
+" " Smart way to move between windows
+" map <C-j> <C-W>j
+" map <C-k> <C-W>k
+" map <C-h> <C-W>h
+" map <C-l> <C-W>l
+"
+" " make mouse scrolling work in vim!!!
+" map <M-Esc>[62~ <ScrollWheelUp>
+" map <M-Esc>[63~ <ScrollWheelDown>
+" map <M-Esc>[64~ <S-ScrollWheelUp>
+" map <M-Esc>[65~ <S-ScrollWheelDown>
+" map! <M-Esc>[62~ <ScrollWheelUp>
+" map! <M-Esc>[63~ <ScrollWheelDown>
+" map! <M-Esc>[64~ <S-ScrollWheelUp>
+" map! <M-Esc>[65~ <S-ScrollWheelDown>
+"
+" " make keypad work in vim with iTerm on OS X!
+" map <Esc>Oq 1
+" map <Esc>Or 2
+" map <Esc>Os 3
+" map <Esc>Ot 4
+" map <Esc>Ou 5
+" map <Esc>Ov 6
+" map <Esc>Ow 7
+" map <Esc>Ox 8
+" map <Esc>Oy 9
+" map <Esc>Op 0
+" map <Esc>On .
+" map <Esc>OQ /
+" map <Esc>OR *
+" map <kPlus> +
+" map <Esc>OS -
+" map! <Esc>Oq 1
+" map! <Esc>Or 2
+" map! <Esc>Os 3
+" map! <Esc>Ot 4
+" map! <Esc>Ou 5
+" map! <Esc>Ov 6
+" map! <Esc>Ow 7
+" map! <Esc>Ox 8
+" map! <Esc>Oy 9
+" map! <Esc>Op 0
+" map! <Esc>On .
+" map! <Esc>OQ /
+" map! <Esc>OR *
+" map! <kPlus> +
+" map! <Esc>OS -
+"
+" syntax on
+"
+" au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+" let g:xml_syntax_folding=1
+" au FileType xml setlocal foldmethod=syntax
+
+
+
+
 " Bundle 'molokai'
 "  Bundle 'Lokaltog/vim-powerline'
 "  let g:Powerline_symbols = 'fancy' " Enable fancy symbols for vim-powerline
@@ -200,232 +435,4 @@ let wiki_1.nested_syntaxes = {'python': 'python', 'ruby': 'ruby', 'rails': 'rail
 " " configure ack.vim plugin
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 "
-" filetype plugin on
-" filetype indent on
-" filetype on
-" set number " Show line numbers
-" set relativenumber " Show line numbers relative to current line "
-" set nopaste
-"
-" " Enable syntax folding for blocks and comments.
-" set foldmethod=syntax
-" set foldminlines=3
-" set foldlevel=100
-"
-" " indentation configuration
-" set cindent
-" set smartindent
-" set autoindent
-"
-" " Convert tabs to spaces, use 2 spaces in place of tabs.
-" set expandtab
-" set tabstop=2
-" set shiftwidth=2
-"
-" " text search options
-" set hlsearch
-" set incsearch
-" set ignorecase
-" set smartcase
-"
-" " hide buffers instead of closing them when you :q, keeping their undo history
-" set hidden
-"
-" " Open new windows on the bottom and right instead of the top and left.
-" set splitbelow
-" set splitright
-"
-" " increase the default command line history
-" set history=1000
-"
-" " File name tab completion functions like bash, it gives you a list of
-" " options instead of automatically filling in the first possible match.
-" set wildmenu
-" " It will however, with this option, complete up to the first character of
-" " ambiguity.
-" set wildmode=list:longest
-"
-" " Make clipbord work on OS X. This makes copy/paste operations trivial between
-" " vim and other applications since they all use the same clipboard now.
-" set clipboard=unnamed
-" " visual select automatically copies to X11's selection ("middle click") buffer
-" set go+=a
-"
-" " scrolls the buffer before you reach the last line of the window
-" set scrolloff=3
-"
-" " Always show status line
-" set laststatus=2
-"
-" " default encoding
-" set encoding=utf-8
-"
-" " sets backspace key functions, allows it to backspace over end of line
-" " characters, start of line, and indentation
-" set backspace=indent,eol,start
-" " movement keys will take you to the next or previous line
-" set whichwrap+=<,>,h,l
-"
-" " enable mouse in console
-" set mousemodel=extend
-" set mouse=a
-" set mousehide
-"
-" " improve autocomplete menu color
-" highlight Pmenu ctermbg=238 gui=bold
-"
-" " set the spellcheck language
-" setlocal spell spelllang=en_us
-" " disable spellcheck by default
-" set nospell
-"
-" " for exuberant CTags support
-" set tags=./tags;/
-"
-" " use a user-local vim-specific directory for backups rather than the global
-" " tmp directory by default
-" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-"
-" " treat question marks as part of a word in ruby
-" autocmd BufRead *.rb,*.rake,*.rhtml,<ruby> set isk=?,@,48-57,_,192-255
-"
-" " ruby
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"
-" " disable wordwrap when looking at CSVs
-" autocmd BufRead *.csv,*.csv*,<csv> set nowrap
-"
-" " remove whistespace at end of line before write
-" func! StripTrailingWhitespace()
-"   normal mZ
-"   %s/\s\+$//e
-"   normal `Z
-" endfunc
-" au BufWrite * if ! &bin | call StripTrailingWhitespace() | endif
-"
-" " display the file name of the current file in the Terminal (xterm/item/&c) title
-" if has('title')
-"   set title
-"   autocmd BufEnter * let &titlestring = "vim: " . expand("%:p:~")
-"   "set titlestring=%t%(\ [%R%M]%)
-"   "autocmd BufEnter * exe "echo '\033'+bufname("%")+'\007'"
-" endif
-"
-" " Disable balloon popup since theres a plugin that makes it really annoying
-" if has("balloon_eval")
-"   set noballooneval
-"   set balloondelay=100000
-" end
-"
-"
-" " shortcuts
-" " for rails.vim alternate between test and tested
-" map <leader>t  :A<CR>
-" map <leader>ts :AS<CR>
-" map <leader>tv :AV<CR>
-" " for rails.vim swap to model/control/etc from associated file
-" map <leader>rm :Rmodel<CR>
-" map <leader>rc :Rcontroller<CR>
-" map <leader>rh :Rhelper<CR>
-" map <leader>ru :Runittest<CR>
-" map <leader>rf :Rfunctionaltest<CR>
-" map <leader>ro :Robserver<CR>
-" map <leader>rv :Rview<CR>
-" map <leader>rl :Rlocale<CR>
-" " for CtrlP
-" map <leader>ff :CtrlP<CR>
-" map <leader>fb :CtrlPBuffer<CR>
-" map <leader>ft :CtrlPTag<CR>
-" map <leader>fq :CtrlPQuickFix<CR>
-" map <leader>fd :CtrlPDir<CR>
-" map <leader>fr :CtrlPRTS<CR>
-" map <leader>fm :CtrlPMRU<CR>
-" " for gundo
-" map <leader>g :GundoToggle<CR>
-" " runs diff against the current buffer and the file on disk
-" map <leader>d :w !diff % -<CR>
-" " When pressing <leader>cd switch to the directory of the open buffer
-" map <leader>cd :cd %:p:h<CR>
-" " search hilighting control, enables and disable intelligently and toggles
-" nnoremap / :set hlsearch<CR>/
-" nnoremap ? :set hlsearch<CR>?
-" nnoremap n :set hlsearch<CR>n
-" nnoremap N :set hlsearch<CR>N
-" nnoremap <CR> :noh<CR><CR>
-" nnoremap <leader>/ :set hlsearch!<CR>
-"
-" " tab navigation like firefox
-" nmap <C-S-tab> :tabprevious<CR>
-" nmap <C-tab> :tabnext<CR>
-" map <C-S-tab> :tabprevious<CR>
-" map <C-tab> :tabnext<CR>
-" imap <C-S-tab> <ESC>:tabprevious<CR>i
-" imap <C-tab> <ESC>:tabnext<CR>i
-" nmap <C-t> :tabnew<CR>
-" imap <C-t> <ESC>:tabnew<CR>
-"
-" " Bash like keys for the command line
-" cnoremap <C-A> <Home>
-" cnoremap <C-E> <End>
-" cnoremap <C-K> <C-U>
-"
-" cnoremap <C-P> <Up>
-" cnoremap <C-N> <Down>
-"
-" " Smart way to move between windows
-" map <C-j> <C-W>j
-" map <C-k> <C-W>k
-" map <C-h> <C-W>h
-" map <C-l> <C-W>l
-"
-" " make mouse scrolling work in vim!!!
-" map <M-Esc>[62~ <ScrollWheelUp>
-" map <M-Esc>[63~ <ScrollWheelDown>
-" map <M-Esc>[64~ <S-ScrollWheelUp>
-" map <M-Esc>[65~ <S-ScrollWheelDown>
-" map! <M-Esc>[62~ <ScrollWheelUp>
-" map! <M-Esc>[63~ <ScrollWheelDown>
-" map! <M-Esc>[64~ <S-ScrollWheelUp>
-" map! <M-Esc>[65~ <S-ScrollWheelDown>
-"
-" " make keypad work in vim with iTerm on OS X!
-" map <Esc>Oq 1
-" map <Esc>Or 2
-" map <Esc>Os 3
-" map <Esc>Ot 4
-" map <Esc>Ou 5
-" map <Esc>Ov 6
-" map <Esc>Ow 7
-" map <Esc>Ox 8
-" map <Esc>Oy 9
-" map <Esc>Op 0
-" map <Esc>On .
-" map <Esc>OQ /
-" map <Esc>OR *
-" map <kPlus> +
-" map <Esc>OS -
-" map! <Esc>Oq 1
-" map! <Esc>Or 2
-" map! <Esc>Os 3
-" map! <Esc>Ot 4
-" map! <Esc>Ou 5
-" map! <Esc>Ov 6
-" map! <Esc>Ow 7
-" map! <Esc>Ox 8
-" map! <Esc>Oy 9
-" map! <Esc>Op 0
-" map! <Esc>On .
-" map! <Esc>OQ /
-" map! <Esc>OR *
-" map! <kPlus> +
-" map! <Esc>OS -
-"
-" syntax on
-"
-" au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
-" let g:xml_syntax_folding=1
-" au FileType xml setlocal foldmethod=syntax
+
