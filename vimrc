@@ -37,6 +37,14 @@ Bundle 'vimwiki'
 set nocompatible
 filetype plugin on
 syntax on
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_user_mouse = 1
+let g:vimwiki_folding = 1
+let g:vimwiki_fold_lists = 1
+let g:vimwiki_list_ignore_newline = 0
+let wiki_1 = {}
+let wiki_1.nested_syntaxes = {'python': 'python', 'ruby': 'ruby', 'rails': 'rails', 'yaml': 'yml'}
 
 " Bundle 'molokai'
 "  Bundle 'Lokaltog/vim-powerline'
@@ -180,16 +188,7 @@ syntax on
 "       \ 'fallback': 'find %s -type f'
 "       \ }
 "
-" " Configure Vimwiki
-" let g:vimwiki_hl_headers = 1
-" let g:vimwiki_hl_cb_checked = 1
-" let g:vimwiki_user_mouse = 1
-" let g:vimwiki_folding = 1
-" let g:vimwiki_fold_lists = 1
-" let g:vimwiki_list_ignore_newline = 0
-" let wiki_1 = {}
-" let wiki_1.nested_syntaxes = {'python': 'python', 'ruby': 'ruby', 'rails': 'rails', 'yaml': 'yml'}
-"
+
 " " configure IndentGuides plugin
 " let g:indent_guides_auto_colors = 0
 " let g:indent_guides_start_level = 3
