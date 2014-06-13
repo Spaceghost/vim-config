@@ -126,10 +126,25 @@ setlocal spell spelllang=en_us
 " disable spellcheck by default
 set nospell
 
+" for exuberant CTags support
+set tags=./tags;/
+
+" use a user-local vim-specific directory for backups rather than the global
+" tmp directory by default
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" treat question marks as part of a word in ruby
+autocmd BufRead *.rb,*.rake,*.rhtml,<ruby> set isk=?,@,48-57,_,192-255
+
+" ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " " movement keys will take you to the next or previous line
 " set whichwrap+=<,>,h,l
-
 
 " " Make clipbord work on OS X. This makes copy/paste operations trivial between
 " " vim and other applications since they all use the same clipboard now.
@@ -137,23 +152,7 @@ set nospell
 " " visual select automatically copies to X11's selection ("middle click") buffer
 " set go+=a
 ""
-" " for exuberant CTags support
-" set tags=./tags;/
-"
-" " use a user-local vim-specific directory for backups rather than the global
-" " tmp directory by default
-" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-"
-" " treat question marks as part of a word in ruby
-" autocmd BufRead *.rb,*.rake,*.rhtml,<ruby> set isk=?,@,48-57,_,192-255
-"
-" " ruby
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"
+
 " " disable wordwrap when looking at CSVs
 " autocmd BufRead *.csv,*.csv*,<csv> set nowrap
 "
