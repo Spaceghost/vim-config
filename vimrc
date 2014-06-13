@@ -27,6 +27,17 @@ Bundle 'gregsexton/gitv'
 " in much smoother looking plugins.
 set lazyredraw
 
+Bundle 'airblade/vim-gitgutter'
+map <leader>G :GitGutterToggle<CR>
+map <leader>GS :GitGutterSignsToggle<CR>
+map <leader>GL :GitGutterLineHighlightsToggle<CR>
+
+" VimWiki configuration
+Bundle 'vimwiki'
+set nocompatible
+filetype plugin on
+syntax on
+
 " Bundle 'molokai'
 "  Bundle 'Lokaltog/vim-powerline'
 "  let g:Powerline_symbols = 'fancy' " Enable fancy symbols for vim-powerline
@@ -98,7 +109,6 @@ set lazyredraw
 " Bundle 'YankRing.vim'
 " Bundle 'jQuery'
 " Bundle 'taglist.vim'
-" Bundle 'vimwiki'
 
 " Dash
 " Bundle 'rizzatti/funcoo.vim'
@@ -131,7 +141,6 @@ set lazyredraw
 " Bundle 'sjbach/lusty'
 " Bundle 'mileszs/ack.vim'
 " Bundle 'godlygeek/tabular'
-" Bundle 'airblade/vim-gitgutter'
 
 " vimwiki setup
 " let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
