@@ -28,9 +28,14 @@ Bundle 'gregsexton/gitv'
 set lazyredraw
 
 Bundle 'airblade/vim-gitgutter'
-map <leader>G :GitGutterToggle<CR>
-map <leader>GS :GitGutterSignsToggle<CR>
-map <leader>GL :GitGutterLineHighlightsToggle<CR>
+let g:gitgutter_realtime = 1 " Set to 0 to trade speed for accuracy
+let g:gitgutter_eager = 1 " Set to 0 to trade speed for accuracy
+map <leader>G :GitGutterToggle<CR> " Pnemonic: Gutter (Toggle)
+map <leader>GS :GitGutterSignsToggle<CR> " Pnemonic: Gutter Signs (Toggle)
+map <leader>GL :GitGutterLineHighlightsToggle<CR> " Pnemonic: Gutter Lines (Toggle)
+nmap <Leader>sh <Plug>GitGutterStageHunk " Pnemonic: Stage Hunk
+nmap <Leader>uh <Plug>GitGutterRevertHunk " Pnemonic: Unstage Hunk
+nmap <Leader>ph <Plug>GitGutterPreviewHunk " Pnemonic: Preview Hunk
 
 " VimWiki configuration
 Bundle 'vimwiki'
