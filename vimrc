@@ -14,10 +14,10 @@ Bundle 'gmarik/vundle'
  " NOTE: comments after Bundle command are not allowed..
 
 " Bundle 'tpope/vim-fugitive'
-" Bundle 'scrooloose/nerdtree'
-" map <leader>menu :NERDTreeToggle<CR>
-" 
-" Bundle 'wincent/command-t'
+Bundle 'scrooloose/nerdtree'
+map <leader>menu :NERDTreeToggle<CR>
+
+Bundle 'wincent/command-t'
 
 " Bundle 'molokai'
 "  Bundle 'Lokaltog/vim-powerline'
