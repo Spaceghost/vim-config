@@ -13,11 +13,19 @@ Bundle 'gmarik/vundle'
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
 
-" Bundle 'tpope/vim-fugitive'
+" NERDTree configuration
 Bundle 'scrooloose/nerdtree'
 map <leader>menu :NERDTreeToggle<CR>
 
 Bundle 'wincent/command-t'
+
+" gitv requires vim-fugitive
+" Includes advice below.
+Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
+" This stops Vim from redrawing the screen during complex operations and results
+" in much smoother looking plugins.
+set lazyredraw
 
 " Bundle 'molokai'
 "  Bundle 'Lokaltog/vim-powerline'
@@ -87,8 +95,6 @@ Bundle 'wincent/command-t'
 " " 
 " " endif
 
-" Bundle 'scrooloose/nerdtree'
-
 " Bundle 'YankRing.vim'
 " Bundle 'jQuery'
 " Bundle 'taglist.vim'
@@ -124,7 +130,6 @@ Bundle 'wincent/command-t'
 " Bundle 'kien/ctrlp.vim'
 " Bundle 'sjbach/lusty'
 " Bundle 'mileszs/ack.vim'
-" Bundle 'gregsexton/gitv'
 " Bundle 'godlygeek/tabular'
 " Bundle 'airblade/vim-gitgutter'
 
