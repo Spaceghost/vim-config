@@ -13,16 +13,16 @@ Bundle 'gmarik/vundle'
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-map <leader>menu :NERDTreeToggle<CR>
-
-Bundle 'wincent/command-t'
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'scrooloose/nerdtree'
+" map <leader>menu :NERDTreeToggle<CR>
+" 
+" Bundle 'wincent/command-t'
 
 " Bundle 'molokai'
- Bundle 'Lokaltog/vim-powerline'
- let g:Powerline_symbols = 'fancy' " Enable fancy symbols for vim-powerline
- call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+"  Bundle 'Lokaltog/vim-powerline'
+"  let g:Powerline_symbols = 'fancy' " Enable fancy symbols for vim-powerline
+"  call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 " NOTE: Get this working in vim and mvim.
 " Bundle 'guicolorscheme.vim'
