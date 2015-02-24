@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require "pathname"
+git_command = "git clone"
+vundle_repository_url = "https://github.com/gmarik/Vundle.vim.git"
+castle_path = Pathname.new(__FILE__).join("../")
+vundle_path = castle_path.join("home/.vim/bundle/Vundle.vim").expand_path.to_s
+
+command = [git_command, vundle_repository_url, vundle_path].join(' ')
+puts command
+
+system(command)
