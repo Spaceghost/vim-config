@@ -8,7 +8,7 @@ clone_command = [git_command, vundle_repository_url, vundle_path].join(' ')
 homesick_command = "homesick link vim-config"
 vim_command = "vim +PluginInstall +qall"
 
-command = "#{clone_command} && #{vim_command}"
+command = [clone_command, homesick_command, vim_command].join(' && ')
 puts command
 
 system(command)
