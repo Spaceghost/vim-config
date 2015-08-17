@@ -55,7 +55,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set nopaste
 
 " Use Dracula color scheme
-color Dracula
+color dracula
 
 " Enable syntax folding for blocks and comments.
 set foldmethod=syntax
