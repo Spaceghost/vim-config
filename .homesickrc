@@ -4,8 +4,9 @@ git_command = "git clone"
 vundle_repository_url = "https://github.com/VundleVim/Vundle.vim"
 castle_path = Pathname.new(__FILE__).join("../")
 vundle_path = castle_path.join("home/.vim/bundle/Vundle.vim").expand_path.to_s
-vim_command = "vim +PluginInstall +qall"
 clone_command = [git_command, vundle_repository_url, vundle_path].join(' ')
+homesick_command = "homesick link vim-config"
+vim_command = "vim +PluginInstall +qall"
 
 command = "#{clone_command} && #{vim_command}"
 puts command
