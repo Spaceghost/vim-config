@@ -78,6 +78,14 @@ set incsearch
 set ignorecase
 set smartcase
 "
+
+" place a line at column 80
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 " hide buffers instead of closing them when you :q, keeping their undo history
 set hidden
 
